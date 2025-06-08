@@ -57,4 +57,26 @@ utilizatorilor. Am ales XAMPP deoarece facilitează o configurare rapidă și si
 \subsection{MariaDB}
 
 MariaDB este sistemul de baze de date relațional folosit pentru stocarea datelor aplicației Moodle. MariaDB a fost creat inițial ca „fork al MySQL”, menținând compatibilitatea cu 
-acesta la nivel de protocol și dialect SQL[4].
+acesta la nivel de protocol și dialect SQL[4]. Principalele motive pentru alegerea MariaDB ca sistem de baze de date pentru Moodle sunt:
+\begin{itemize}
+    \item \textbf{Performanță și scalabilitate}: MariaDB este recunoscută pentru performanța sa îmbunatățită și pentru facilitarea unei scalări mai eficiente a aplicațiilor, 
+    ceea ce este esențial pentru Moodle, având în vedere numărul mare de utilizatori și volumele de date gestionate. Teste comparative au demonstrat că MariaDB depășesțe MySQL în
+    special în mediile cloud, permițând un debit mai mare de tranzacții și o latență mai mică în accesarea datelor pentru fire de execuție multiple ce rulează în paralel. [11]
+    \item \textbf{Motoare de stocare suplimentare}: Pe lângă motoarele de stocare de date din MySQL, MariaDB oferă și altele noi, cum ar fi XtraDB, MariaDB ColumnStore și Aria,
+    care îmbunătățesc performanța și flexibilitatea în gestionarea datelor. Aceste motoare permit optimizarea stocării și accesului la date, ceea ce este benefic pentru Moodle,
+    având în vedere diversitatea tipurilor de date și a volumelor de informații gestionate. [11]
+    \item \textbf{Caracteristici avansate pentru medii cu sarcini ridicate}: MariaDB oferă posibilitatea de a gestiona peste 200.000 de utilizatori conectați simultan. În același timp, 
+    aceasta are capacitatea de a cripta jurnalele binare și tabelele temporare. [11]
+    \item \textbf{Suport pentru Clustering și toleranța la erori}: Un atribut important al MariaDB este capacitatea de a crea clustere de baze de date care permit gestionarea distribuției 
+    sarcinilor pe nodurile serverului de baze de date. Utilizarea acestei funcționalități îmbunătățește toleranța la erori, asigurând o redistribuire a traficului în caz de eșec al unui 
+    nod. Studiile arată că utlizarea acestei caracteristici poare îmbunătăți seminificatic perfomanța mediului Moodle. [11]
+    \item \textbf{Optimizare pentru configurații specifice}: Pentru sistemele bazate pe Windows, MariaDB este considerată configurația optimă pentru instalarea Moodle. Această variantă 
+    oferă avantaje de clustering al bazei de date și echilibrare a sarcinii, asigurând calitate optimă, viteză ridicată și absența problemelor de securitate. Deși Apache/MySQL este 
+    considerată optimă pentru distribuțiile Linux, MariaDB are potențialul de a înlocui MySQL în acest context. [11]
+\end{itemize}
+
+\subsection{GeminiAPI}
+
+Gemini face parte din familia de modele generative de la Google DeepMind/Vertex AI. Aceste modele de inteligență artificială pot procesa intrări multimodale, text și imagini, și generează
+conținut corent. Gemini este „cel mai capabil și general model AI” creat de Google până în prezent, optimizat în variante precum Ultra, Pro și Nano pentru sarcini de complexități diferite. 
+Gemini este accesil prin API-ul Google Cloud Vertex AI, care permite aplicațiilor externe să trimită prompt-uri și să primească răspunsuri textuale generate. [5]
